@@ -1,0 +1,87 @@
+
+// Fonts
+
+// Variables
+@import "variables";
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+body {
+	background: $body-bg;
+	font-weight: 300;
+}
+.container {
+	padding-bottom: 50px;
+}
+
+.title-bar {
+	padding-top:50px;
+}
+.box-style {
+	background: #fff;
+	border:1px solid #E9E9E9;
+	margin:10px 0;
+}
+
+.logo {
+	margin:15px;
+}
+.select-device, .select-location {
+	width: 200px;
+	margin: 17px 20px;
+}
+.map {
+	height: 400px;
+	width: 100%;
+}
+
+.input-daterange {
+	float:right!important;
+	width:300px!important;
+	margin: 17px 20px;
+}
+.input-daterange .input-group-text{ 
+	border-radius: 0;
+	border-width: 1px 0;
+} 
+.data-box {
+	padding-bottom: 20px;
+	h2 {
+		margin:20px 0 15px 15px;
+	}
+}
+
+#live-view {
+	padding:10px 30px 15px;
+	position: relative;
+	
+	.number {
+		font-size:44px;
+		font-weight: 300;
+		color:#12A907;
+	}
+	.number.red {
+		color:#E70000;
+	}
+	.number.orange {
+		color:#FF7619;
+	}
+	.live::before {
+		background: red;
+		border-radius: 20px;
+		width:11px;
+		height:11px;
+		content:"";
+		position: absolute;
+		left:-16px;
+		top:6px;
+	}
+	.live {
+		position: absolute;
+		right:8px;
+		top:2px;
+		color:#A5A5A5;
+		font-size:15px;
+	}
+}
