@@ -59,7 +59,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="box-style  settings-bar">
-						<!-- TODO: Location selector -->
+						<!-- TODO: Location selector
 						<div class="form-group select-location float-left">
 							<select class="form-control">
 								<option>All locations</option>
