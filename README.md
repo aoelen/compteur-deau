@@ -1,5 +1,6 @@
 # Compteur-deau data dashboard
 
+## Project information
 Data dashboard for showing sensor data for the _Compteur d'eau_
 
 Data being displayed:
@@ -15,3 +16,7 @@ Created using:
 - Bootstrap 
 - [vue-google-maps](https://github.com/heavyy/vue2-google-maps)
 - [vue-charts](https://github.com/haydenbbickerton/vue-charts)
+
+## Screenshot
+
+![App](public/img/screenshot.png)
