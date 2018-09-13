@@ -20,9 +20,9 @@ import JqueryDatepicker from './components/JqueryDatepicker.vue';
 var app = new Vue({
     el: '#app',
     data: {
-        startDate: '12-02-2018',
-        endDate: '12-03-2018',
-        startingDate: '02-01-2018'
+        startDate: '01-01-2018',
+        endDate: '31-12-2018',
+        //startingDate: '02-01-2018'
     },
     methods: {
         updateDates(startDate, endDate) {

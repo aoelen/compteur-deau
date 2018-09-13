@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" >
 	<link rel="stylesheet" href="/css/app.css" >
 	
-	<title>Compteur d'eau dashboard</title>
+	<title>Compteur d'eau {{ __('dashboard') }}</title>
 </head>
 <body>
 	<div id="app">
@@ -27,28 +27,52 @@
 								@endforeach
 							</select>
 						</div>
+						
+						<div class="form-group float-right select-language">
+							<a href="/en"><img src="/img/en.png" /></a>
+							<a href="/fr"><img src="/img/fr.png" /></a>
+							<a href="/nl"><img src="/img/nl.png" /></a>
+						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div id="live-view" class="row box-style">
-				<div class="live">Latest</div>
+				<div class="live">{{ __('Latest') }}</div>
 				
 				<div class="col">
 					<div class="number text-center">{{ $latestData[0]->ph }}</div> <!-- orange -->
-					<div class="label text-center">pH</div>
+					<div class="label text-center">{{ __('pH') }}</div>
 				</div>
 				<div class="col">
 					<div class="number text-center">{{ $latestData[0]->turbidity }}</div>
-					<div class="label text-center">Turbidity</div>
+					<div class="label text-center">{{ __('Turbidity') }}</div>
 				</div>
 				<div class="col">
 					<div class="number text-center">{{ $latestData[0]->tds }}</div><!-- red -->
-					<div class="label text-center">TDS</div>
+					<div class="label text-center">{{ __('TDS') }}</div>
 				</div>
 				<div class="col">
 					<div class="number text-center">{{ $latestData[0]->temp }}</div>
-					<div class="label text-center">Temperature</div>
+					<div class="label text-center">{{ __('Temperature') }}</div>
+				</div>
+				<div class="col">
+					<div class="number text-center">{{ $latestData[0]->orp }}</div>
+					<div class="label text-center">{{ __('ORP') }}</div>
+				</div>
+				<div class="col">
+					<div class="number text-center">{{ $latestData[0]->{'battery-level'} }}</div>
+					<div class="label text-center">{{ __('Battery level') }}</div>
+				</div>
+				<div class="col">
+					<div class="number text-center">
+						@if ($latestData[0]->{'battery-charging'} == 1)
+							{{ __('Yes')}}
+						@else
+							{{ __('No')}}
+						@endif
+					</div>
+					<div class="label text-center">{{ __('Charging') }}</div>
 				</div>
 			</div>
 			
@@ -59,16 +83,6 @@
 			<div class="row">
 				<div class="col">
 					<div class="box-style  settings-bar">
-						<!-- TODO: Location selector
-						<div class="form-group select-location float-left">
-							<select class="form-control">
-								<option>All locations</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>-->
 						<div class="form-group">
 							<jquery-datepicker @update-date="updateDates"></jquery-datepicker>
 						</div>
@@ -78,14 +92,19 @@
 			</div>
 			
 			<div class="row">
-				<compteur-chart title="pH" param="ph" :start-date="startDate" :end-date="endDate"></compteur-chart>
-				<compteur-chart title="Turbidity" param="turbidity" :start-date="startDate" :end-date="endDate"></compteur-chart>
+				<compteur-chart title="{{ __('pH') }}" param="ph" :start-date="startDate" :end-date="endDate"></compteur-chart>
+				<compteur-chart title="{{ __('Turbidity') }}" param="turbidity" :start-date="startDate" :end-date="endDate"></compteur-chart>
 			</div>
 			
 			<div class="row">
-				<compteur-chart title="Total Dissolved Solids" param="tds" :start-date="startDate" :end-date="endDate"></compteur-chart>
-				<compteur-chart title="Temperature" param="temp" :start-date="startDate" :end-date="endDate"></compteur-chart>
+				<compteur-chart title="{{ __('Total Dissolved Solids') }}" param="tds" :start-date="startDate" :end-date="endDate"></compteur-chart>
+				<compteur-chart title="{{ __('Temperature') }}" param="temp" :start-date="startDate" :end-date="endDate"></compteur-chart>
 			</div>		
+			
+			<div class="row">
+				<compteur-chart title="{{ __('Oxidation Reduction Potential') }}" param="orp" :start-date="startDate" :end-date="endDate"></compteur-chart>
+				<compteur-chart title="{{ __('Battery level') }}" param="battery-level" :start-date="startDate" :end-date="endDate"></compteur-chart>
+			</div>
 		</div>
 	</div>
 	

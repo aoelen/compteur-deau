@@ -1,0 +1,14 @@
+{
+    "Latest": "Nieuwste",
+	"dashboard": "dashboard",
+	"Turbidity": "Troebelheid",
+	"TDS": "TDS",
+	"Temperature": "Temperatuur",
+	"ORP": "ORP",
+	"Battery level": "Batterijpercentage",
+	"Time": "Tijd",
+	"value": "Waarde",
+	"to": "tot",
+    "Total Dissolved Solids": "Hoeveelheid opgeloste stoffen (TDS)",
+    "Oxidation Reduction Potential": "Oxidatie Reductie Potentiaal"
+}

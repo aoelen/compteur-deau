@@ -15,15 +15,18 @@ class CreateDataTable extends Migration
     {
         Schema::create('data', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('device_id')->unsigned();
-            $table->float('temp',8,2);
-            $table->float('tds',8,2);
-            $table->float('turbidity',8,2);
-            $table->float('ph',8,2);
-            $table->float('x',15,10);
-            $table->float('y',15,10);
-            $table->float('gps',8,2);
-            $table->integer('ns');
+            $table->integer('device_id')->unsigned()->nullable();
+            $table->float('temp',8,2)->nullable();
+            $table->float('tds',8,2)->nullable();
+            $table->float('turbidity',8,2)->nullable();
+            $table->float('ph',8,2)->nullable();
+            $table->float('orp',8,2)->nullable();
+            $table->float('x',15,10)->nullable();
+            $table->float('y',15,10)->nullable();
+            $table->float('gps',8,2)->nullable();
+            $table->integer('ns')->nullable();
+            $table->integer('battery-level')->nullable();
+            $table->integer('battery-charging')->nullable();
             $table->timestamps();
             $table->foreign('device_id')->references('id')->on('devices');
         });

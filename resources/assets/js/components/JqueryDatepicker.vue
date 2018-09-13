@@ -28,8 +28,8 @@
         },
         data() {
             return {
-                startDate: '12-02-2018',
-                endDate: '12-03-2018'
+                startDate: '01-01-2018',
+                endDate: '31-12-2018'
             }
         }
     }

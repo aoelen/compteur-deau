@@ -27,9 +27,19 @@ body {
 .logo {
 	margin:15px;
 }
+.select-language a {
+	margin:24px 5px 0;
+	display: block;
+	float:left;
+	
+	img{
+		width:30px;
+		border:1px solid #E9E9E9;
+	}
+}
 .select-device, .select-location {
 	width: 200px;
-	margin: 17px 20px;
+	margin: 19px 20px;
 }
 .map {
 	height: 400px;

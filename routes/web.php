@@ -4,11 +4,6 @@
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 use App\Device;
@@ -16,7 +11,9 @@ use App\Data;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-Route::get('/', function () {
+Route::get('/{language?}', function ($language = null) {
+    App::setLocale($language);
+    
     $devices = Device::all();
     $latestData = Data::latest()->get();
     $dateToday = Carbon::now();
@@ -27,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('/data/{parameter}', function (Request $request, $parameter) {
-    if (!in_array($parameter, ['ph', 'temp', 'tds', 'turbidity', 'gps']) || empty($request->query('start')) || empty($request->query('end'))) {
+    if (!in_array($parameter, ['ph', 'temp', 'tds', 'turbidity', 'gps', 'orp', 'battery-level', 'battery-charging']) || empty($request->query('start')) || empty($request->query('end'))) {
         return abort(404);
     }
     
@@ -46,4 +43,16 @@ Route::get('/data/{parameter}', function (Request $request, $parameter) {
         ->get();
     
     return $data;
+});
+
+Route::get('/saveData', function (Request $request) {
+    $parameterList = ['ph', 'temp', 'tds', 'turbidity', 'orp', 'battery-level', 'battery-charging', 'x', 'y', 'gps', 'ns'];
+    
+    $data = new Data;
+    
+    foreach($parameterList as $parameter) {
+        $data->$parameter = $request->query($parameter);
+    }
+    
+    $data->save();
 });
