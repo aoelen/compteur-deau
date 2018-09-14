@@ -30,6 +30,7 @@ In addition to the components list some small parts are needed. This includes wi
 In the figure below, a high-level overview of how the components are connected is displayed. Two of the five sensors are connected using BNC connectors (depicted as a circle) and the other three sensors are connected using pin connectors. 
 
 ![Schematics](img/schematics.png)
+[View full screen image](img/schematics.png)
 
 ### Housing
 The housing of the device has been designed with Autodesk Fusion 360. Afterwards the design has been printed with an Ultimaker 2+ 3D printer. The figure below shows the renders of the device. A solar panel can be installed on top of the lid. The source of the design [can be downloaded via the Autodesk website](https://a360.co/2QzWFr4). The STL file can be [downloaded directly from here](files/device-design.stl). To print the design, download the STL file and send it to your 3D printer.
@@ -71,4 +72,4 @@ The code that runs on the LinkIt One can be found in the [Compteur D'eau device 
 #### Dashboard code
 The dashboard code is written in PHP using the Laravel framework. The dashboard can be used to display the recorded sensor data. In addition to this, the dashboard can be used to record the data. Recording data is done by sending a GET request, for example: `/saveData?ph=7.23&temp=25.43&tds=213&turbidity=1&orp=201&battery-level=66&battery-charging=1&x=52.3538093567&y=4.7772049904&gps=0.72&ns=13.00` The code can be found online in [this repository](https://github.com/aoelen/compteur-deau). Additional information about the code can be found in the Readme file of the mentioned repository. 
 
-![App](../public/img/screenshot.png)
+![App](img/screenshot.png)
