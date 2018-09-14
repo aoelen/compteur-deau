@@ -1,5 +1,3 @@
-# Compteur-d'eau documentation
-
 ## 1. Introduction 
 Compteur d'eau is a device that is able to measure and monitor water quality using low-cost sensors within the context of rural Africa. The development of this device is part of a master thesis at the [Vrije Universiteit Amsterdam](http://vu.nl) and [2CoolMonkeys](https://www.2coolmonkeys.nl). The project focusses on how to design IoT devices for development areas. This is done by introducing a new methodology and by showing how to make informed design decisions. To demonstrate how to use this methodology, the IoT device Compteur d'eau has been constructed.
 
