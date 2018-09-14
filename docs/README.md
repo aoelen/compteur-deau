@@ -1,9 +1,9 @@
 # Compteur-d'eau documentation
 
-## Introduction 
+## 1. Introduction 
 Compteur d'eau is a device that is able to measure and monitor water quality using low-cost sensors within the context of rural Africa. The development of this device is part of a master thesis at the [Vrije Universiteit Amsterdam](http://vu.nl) and [2CoolMonkeys](https://www.2coolmonkeys.nl). The project focusses on how to design IoT devices for development areas. This is done by introducing a new methodology and by showing how to make informed design decisions. To demonstrate how to use this methodology, the IoT device Compteur d'eau has been constructed.
 
-## About the device
+## 2. About the device
 The Compteur d'eau is able to measure and monitor water quality parameters. This is done by using low-cost sensors. The device has been designed to operate within rural areas of Africa, which means this project is part of an ICT for Development (ICT4D) context. Since the device can be used as an IoT device, this research can be called an IoT4D project. Using low-cost and mostly open-source sensors, the device is able to monitor water quality. Summarizing some of the key features of the device:
 - Measuring water quality with low-cost sensors
 - Designed to operate within the context of rural Africa 
@@ -11,7 +11,7 @@ The Compteur d'eau is able to measure and monitor water quality parameters. This
 - Sending data using GPRS/WiFi to a cloud environment
 - Robust software design (when one sensor breaks, the rest keeps working)
 
-### Components
+### 2.1 Components
 The main unit of the device is the LinkIt One. This board controls the incoming sensor data. Dependent on the device settings, the sensor data is uploaded to the cloud using WiFi or GPRS. Sensor data can also be stored on the device itself (on the internal storage or the SD card).
 
 | Type                      | Description                          |
@@ -26,19 +26,19 @@ The main unit of the device is the LinkIt One. This board controls the incoming 
 
 In addition to the components list some small parts are needed. This includes wires and pin connectors. In order to fully assemble the device, a soldering iron is needed.
 
-### Schematics
+### 2.2 Schematics
 In the figure below, a high-level overview of how the components are connected is displayed. Two of the five sensors are connected using BNC connectors (depicted as a circle) and the other three sensors are connected using pin connectors. 
 
 ![Schematics](img/schematics.png)
 [View full screen image](img/schematics.png)
 
-### Housing
+### 2.3 Housing
 The housing of the device has been designed with Autodesk Fusion 360. Afterwards the design has been printed with an Ultimaker 2+ 3D printer. The figure below shows the renders of the device. A solar panel can be installed on top of the lid. The source of the design [can be downloaded via the Autodesk website](https://a360.co/2QzWFr4). The STL file can be [downloaded directly from here](files/device-design.stl). To print the design, download the STL file and send it to your 3D printer.
 
 ![3D Design](img/3d-design.png)
-### Code
+### 2.4 Code
 
-#### Device code
+#### 2.4.1 Device code
 The code that runs on the LinkIt One can be found in the [Compteur D'eau device repository](https://github.com/aoelen/compteur-deau-device). The code can be compiled and installed with the Arduino IDE. Below, the settings of the device are listed. These settings can be found in the `main.ino` file. Additional information about the code can be found in the Readme file of the mentioned repository. 
 
 | Type                      | Description                                                                                                                                           | Default value                                                                  |
@@ -69,7 +69,7 @@ The code that runs on the LinkIt One can be found in the [Compteur D'eau device 
 | INTERVAL_GPRS             | The interval of sending the data via GPRS. Provide the amount in milliseconds. The smaller the interval, the more battery is used                     | 900.000                                                                        |
 | INTERVAL_GPS              | The interval in which the GPS coordinates need to be reloaded. Provide the amount in milliseconds. The smaller the interval, the more battery is used | 900.000                                                                        |
 
-#### Dashboard code
+#### 2.4.2 Dashboard code
 The dashboard code is written in PHP using the Laravel framework. The dashboard can be used to display the recorded sensor data. In addition to this, the dashboard can be used to record the data. Recording data is done by sending a GET request, for example: `/saveData?ph=7.23&temp=25.43&tds=213&turbidity=1&orp=201&battery-level=66&battery-charging=1&x=52.3538093567&y=4.7772049904&gps=0.72&ns=13.00` The code can be found online in [this repository](https://github.com/aoelen/compteur-deau). Additional information about the code can be found in the Readme file of the mentioned repository. 
 
 ![App](img/screenshot.png)
