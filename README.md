@@ -1,5 +1,7 @@
 # Compteur-deau data dashboard
 
+_Tip: The landing page provides more information about the Compteur d'eau: https://aoelen.github.io/compteur-deau/_
+
 ## Code information
 Data dashboard for showing sensor data for the _Compteur d'eau_. The code than runs on the device can be found via: https://github.com/aoelen/compteur-deau-device. The dashboard is able to display sensor data and to store sensor data coming from the measurement device. 
 
